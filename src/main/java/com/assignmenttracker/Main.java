@@ -41,6 +41,12 @@ public class Main {
             System.out.println(assignment.getName() + " - " + assignment.getStatus());
         }
 
+        // Retrieve completed assignments
+        System.out.println("\nCompleted Assignments:");
+        for (Assignment assignment : manager.getCompletedAssignments()) {
+            System.out.println(assignment.getName() + " - " + assignment.getStatus());
+        }
+
         // Delete an assignment
         course2.removeAssignment(assignment3);
 
