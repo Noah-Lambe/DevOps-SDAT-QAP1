@@ -6,13 +6,15 @@ public class Assignment {
     private int id;
     private Course course;
     private LocalDate dueDate;
+    private boolean completed;
     private String status;
 
-    public Assignment(String name, int ID, LocalDate dueDate, String status) {
+    public Assignment(String name, int ID, LocalDate dueDate, boolean completed, String status) {
         this.name = name;
         this.id = ID;
         this.course = null;
         this.dueDate = dueDate;
+        this.completed = completed;
         this.status = status;
     }
 
@@ -40,11 +42,17 @@ public class Assignment {
         this.dueDate = dueDate;
     }
 
-    public String getStatus() {
-        return status;
+    public boolean getcompleted() {
+        return completed;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public String getStatus() {
+        if (LocalDate.now().isAfter(dueDate) && !completed) {
+            return "Overdue";
+        } else if (completed) {
+            return "Completed";
+        } else {
+            return "Pending";
+        }
     }
 }
