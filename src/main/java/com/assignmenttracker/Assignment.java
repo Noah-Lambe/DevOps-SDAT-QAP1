@@ -9,7 +9,7 @@ public class Assignment {
     private boolean completed;
     private String status;
 
-    public Assignment(String name, int ID, LocalDate dueDate, boolean completed, String status) {
+    public Assignment(String name, int ID, Course course, LocalDate dueDate, boolean completed, String status) {
         this.name = name;
         this.id = ID;
         this.course = null;
@@ -24,6 +24,14 @@ public class Assignment {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
     public int getID() {

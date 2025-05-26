@@ -42,4 +42,16 @@ public class AssignmentManager {
         }
         return pendingAssignments;
     }
+
+    public List<Assignment> getCompletedAssignments() {
+        List<Assignment> completedAssignments = new ArrayList<>();
+        for (Course course : courses) {
+            for (Assignment assignment : course.getAssignments()) {
+                if ("Completed".equalsIgnoreCase(assignment.getStatus())) {
+                    completedAssignments.add(assignment);
+                }
+            }
+        }
+        return completedAssignments;
+    }
 }
