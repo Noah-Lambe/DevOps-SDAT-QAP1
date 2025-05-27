@@ -1,5 +1,6 @@
 package com.assignmenttracker;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Assignment {
     private String name;
@@ -7,16 +8,31 @@ public class Assignment {
     private Course course;
     private LocalDate dueDate;
     private boolean completed;
-    private String status;
 
-    public Assignment(String name, int ID, Course course, LocalDate dueDate, boolean completed, String status) {
+    public Assignment(String name, int ID, Course course, LocalDate dueDate, boolean completed) {
         this.name = name;
         this.id = ID;
         this.course = null;
         this.dueDate = dueDate;
         this.completed = completed;
-        this.status = status;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Assignment)) return false;
+        Assignment that = (Assignment) o;
+        return id == that.id &&
+                completed == that.completed &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(dueDate, that.dueDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, id, dueDate, completed);
+    }
+
 
     public String getName() {
         return name;

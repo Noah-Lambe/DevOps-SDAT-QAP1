@@ -14,9 +14,26 @@ public class Main {
         manager.addCourse(course2);
 
         // Create assignments
-        Assignment assignment1 = new Assignment("Algebra Homework", 1, course1,  LocalDate.of(2026, 10, 15), false, "Pending");
-        Assignment assignment2 = new Assignment("Physics Lab Report", 2, course2, LocalDate.of(2024, 2, 20), true, "Completed");
-        Assignment assignment3 = new Assignment("Chemistry Project", 3, course2, LocalDate.of(2023, 10, 25), false, "Pending");
+        Assignment assignment1 = new Assignment(
+                "Algebra Homework",
+                1,
+                course1,
+                LocalDate.of(2026, 10, 15),
+                false);
+
+        Assignment assignment2 = new Assignment(
+                "Physics Lab Report",
+                2,
+                course2,
+                LocalDate.of(2024, 2, 20),
+                true);
+
+        Assignment assignment3 = new Assignment(
+                "Chemistry Project",
+                3,
+                course2,
+                LocalDate.of(2023, 10, 25),
+                false);
 
         // Add assignments to courses
         course1.getAssignments().add(assignment1);
@@ -46,6 +63,14 @@ public class Main {
         for (Assignment assignment : manager.getCompletedAssignments()) {
             System.out.println(assignment.getName() + " - " + assignment.getStatus());
         }
+
+        // Add an assignment
+        course1.addAssignment(new Assignment(
+                "Quadratic equation practice",
+                4,
+                course1,
+                LocalDate.of(2025, 12, 1),
+                true));
 
         // Delete an assignment
         course2.removeAssignment(assignment3);
