@@ -33,4 +33,13 @@ public class Course {
         return assignmentsarrayList;
     }
 
+    public void addAssignment(Assignment assignment) {
+        assignmentsarrayList.add(assignment);
+        assignment.setCourse(this);
+    }
+
+    public void removeAssignment(Assignment assignment) {
+        assignmentsarrayList.remove(assignment);
+        assignment.setCourse(null);
+    }
 }
