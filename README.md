@@ -34,7 +34,7 @@ The project includes five unit tests located in `src/test/java/com/assignmenttra
 
 The project uses Maven for dependency management. The primary dependencies are:
 
-- **JUnit 5** (for testing): `org.junit.jupiter:junit-jupiter:5.9.3`
+- **JUnit 5** (for testing): `org.junit.jupiter:junit-jupiter:5.10.0`
 - **Maven Surefire Plugin** (to run tests): version `3.0.0-M7`
 
 Example `pom.xml` dependency section:
@@ -44,7 +44,7 @@ Example `pom.xml` dependency section:
   <dependency>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter</artifactId>
-    <version>5.9.3</version>
+    <version>5.10.0</version>
     <scope>test</scope>
   </dependency>
 </dependencies>
